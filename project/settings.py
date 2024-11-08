@@ -94,13 +94,14 @@ WSGI_APPLICATION = "project.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'payppy'),          # Replace 'payppy' with your actual database name
-        'USER': os.getenv('DB_USER', 'postgres'),        # Replace with your PostgreSQL username
-        'PASSWORD': os.getenv('DB_PASSWORD', '123456'),  # Replace with your PostgreSQL password
-        'HOST': '3.88.145.241',                          # Private IP of the EC2 instance
-        'PORT': '5432',                                  # Default PostgreSQL port
+        'NAME': 'payppy',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',  # PostgreSQL will be on localhost inside the container
+        'PORT': '5432',
     }
 }
+
 
 
 REST_FRAMEWORK = {
