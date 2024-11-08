@@ -93,14 +93,15 @@ WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.getenv('DB_NAME', BASE_DIR / 'db.sqlite3'),
-        'USER': os.getenv('DB_USER', ''),
-        'PASSWORD': os.getenv('DB_PASSWORD', ''),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', ''),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'payppy'),          # Replace 'payppy' with your actual database name
+        'USER': os.getenv('DB_USER', 'postgres'),        # Replace with your PostgreSQL username
+        'PASSWORD': os.getenv('DB_PASSWORD', '123456'),  # Replace with your PostgreSQL password
+        'HOST': '3.88.145.241',                          # Private IP of the EC2 instance
+        'PORT': '5432',                                  # Default PostgreSQL port
     }
 }
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
