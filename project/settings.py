@@ -94,13 +94,14 @@ WSGI_APPLICATION = "project.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'payppy',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': '127.0.0.1',  # PostgreSQL will be on localhost inside the container
-        'PORT': '5432',
+        'NAME': 'payppy',  # Database name
+        'USER': 'postgres',  # Database user
+        'PASSWORD': '123456',  # Database password
+        'HOST': 'localhost',  # Host for the database (local for the Docker container)
+        'PORT': '5432',  # Default PostgreSQL port
     }
 }
+
 
 
 
